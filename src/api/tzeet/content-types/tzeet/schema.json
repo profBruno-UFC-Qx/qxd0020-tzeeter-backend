@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tzeets",
+  "info": {
+    "singularName": "tzeet",
+    "pluralName": "tzeets",
+    "displayName": "Tzeet"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "content": {
+      "type": "text",
+      "maxLength": 140,
+      "required": true
+    },
+    "likes": {
+      "type": "integer",
+      "min": 0
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "tzeets"
+    }
+  }
+}
